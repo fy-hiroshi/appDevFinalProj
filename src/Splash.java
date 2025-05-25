@@ -17,7 +17,9 @@ public class Splash {
     public void init() {
         
         //Frame
+        
         frmSplash = new JFrame();
+        frmSplash.setIconImage(new ImageIcon("img/logo.png").getImage());
         frmSplash.setUndecorated(true);
         frmSplash.setSize(350, 200);
         frmSplash.setLocationRelativeTo(null);

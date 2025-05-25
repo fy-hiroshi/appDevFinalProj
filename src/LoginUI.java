@@ -15,6 +15,7 @@ import javax.swing.border.TitledBorder;
 public class LoginUI extends JFrame implements ActionListener {
 
     JFrame frame = new JFrame("Student Grading System");
+    
     JPasswordField passField = new JPasswordField(20);
     JTextField userField = new JTextField(20);
     JButton loginButton = new JButton("Login");
@@ -23,6 +24,7 @@ public class LoginUI extends JFrame implements ActionListener {
     public void Login() {
 
         // Frame
+        frame.setIconImage(new ImageIcon("img/logo.png").getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(450, 650));
 
@@ -37,8 +39,8 @@ public class LoginUI extends JFrame implements ActionListener {
         Dimension buttonSize = new Dimension(150, 45);
 
         // Login Label
-        JLabel titleLabel = new JLabel("Log in", JLabel.CENTER);
-        titleLabel.setFont(new Font("Google Sans", Font.BOLD, 30));
+        JLabel titleLabel = new JLabel("Login To Start", JLabel.CENTER);
+        titleLabel.setFont(new Font("Google Sans", Font.BOLD, 40));
         titleLabel.setForeground(new Color(230, 230, 230));
         mainConstraints.gridx = 0;
         mainConstraints.gridy = 0;
@@ -48,7 +50,7 @@ public class LoginUI extends JFrame implements ActionListener {
         // Sub-Text
         JLabel subLabel = new JLabel("Enter provided credentials to continue", JLabel.CENTER);
         subLabel.setForeground(new Color(230, 230, 230));
-        subLabel.setFont(new Font("Google Sans", Font.PLAIN, 14));
+        subLabel.setFont(new Font("Google Sans", Font.PLAIN, 24));
         mainConstraints.gridy = 1;
         mainPanel.add(subLabel, mainConstraints);
 
@@ -105,7 +107,6 @@ public class LoginUI extends JFrame implements ActionListener {
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                frame.dispose();
                 Forgot forgot = new Forgot();
             }
 
@@ -154,7 +155,7 @@ public class LoginUI extends JFrame implements ActionListener {
         mainPanel.add(inputPanel, mainConstraints);
 
         // Separator
-        JLabel separatorLabel = new JLabel("_________________________", JLabel.CENTER);
+        JLabel separatorLabel = new JLabel("_______________________________", JLabel.CENTER);
         separatorLabel.setFont(new Font("Google Sans", Font.PLAIN, 25));
         separatorLabel.setForeground(new Color(230, 230, 230));
         mainConstraints.gridy = 4;
@@ -248,6 +249,7 @@ public class LoginUI extends JFrame implements ActionListener {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     }
 

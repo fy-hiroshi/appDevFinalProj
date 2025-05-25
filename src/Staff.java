@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -31,6 +32,7 @@ public class Staff extends JFrame implements ActionListener {
         dbInfo = new DatabaseInfo("root", "", "jdbc:mysql://localhost:3306/grading_system");
         dbConnect = new DatabaseConnect(dbInfo);
 
+        staffFrame.setIconImage(new ImageIcon("img/logo.png").getImage());
         staffFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         staffFrame.setPreferredSize(new Dimension(450, 500));
 
@@ -43,7 +45,7 @@ public class Staff extends JFrame implements ActionListener {
 
         // title Label
         JLabel titleLabel = new JLabel("GRADE RECORDING SYSTEM", JLabel.CENTER);
-        titleLabel.setFont(new Font("Google Sans", Font.BOLD, 25));
+        titleLabel.setFont(new Font("Google Sans", Font.BOLD, 35));
         titleLabel.setForeground(new Color(230, 230, 230));
         staffConstraints.gridx = 0;
         staffConstraints.gridy = 0;
@@ -53,7 +55,7 @@ public class Staff extends JFrame implements ActionListener {
         // Sub-Text
         JLabel subLabel = new JLabel("Enter Information to Continue", JLabel.CENTER);
         subLabel.setForeground(new Color(230, 230, 230));
-        subLabel.setFont(new Font("Google Sans", Font.PLAIN, 14));
+        subLabel.setFont(new Font("Google Sans", Font.PLAIN, 24));
         staffConstraints.gridy = 1;
         staffPanel.add(subLabel, staffConstraints);
 
@@ -62,7 +64,7 @@ public class Staff extends JFrame implements ActionListener {
         staffPanel.add(new JLabel(" "), staffConstraints);
 
         // Display area
-        displayArea = new JTextArea(10, 30);
+        displayArea = new JTextArea(20, 30);
         displayArea.setBackground(new Color(11, 18, 21));
         displayArea.setForeground(new Color(244, 244, 244));
         displayArea.setEditable(false);
@@ -176,6 +178,7 @@ public class Staff extends JFrame implements ActionListener {
         staffFrame.pack();
         staffFrame.setLocationRelativeTo(null);
         staffFrame.setVisible(true);
+        staffFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     @Override
@@ -486,6 +489,8 @@ public class Staff extends JFrame implements ActionListener {
             UIManager.put("OptionPane.messageForeground", Color.WHITE);
             UIManager.put("TextField.background", new Color(13,20,23));
             UIManager.put("TextField.foreground", new Color(230,230,230));
+            UIManager.put("Button.background", new Color(13, 20, 23));
+            UIManager.put("Button.foreground", new Color(230,230,230));
 
                 String deleteName = JOptionPane.showInputDialog(this, "Enter the student's name to delete:");
                 if (deleteName == null || deleteName.isEmpty())

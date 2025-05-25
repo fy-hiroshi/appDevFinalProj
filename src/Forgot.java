@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,6 +18,7 @@ public class Forgot extends JFrame implements ActionListener {
 
     public Forgot()
     {
+        forgotFrame.setIconImage(new ImageIcon("img/logo.png").getImage());
         forgotFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         forgotFrame.setPreferredSize(new Dimension(450, 220));
 
@@ -78,9 +80,6 @@ public class Forgot extends JFrame implements ActionListener {
     if (cmd.equals("Back")) {
 
         forgotFrame.dispose();
-        LoginUI login = new LoginUI();
-        login.Login();
-
         }
     }
 }
