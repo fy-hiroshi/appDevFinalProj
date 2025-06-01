@@ -8,31 +8,31 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Splash {
-    
+
     JFrame frmSplash;
     JPanel pnlSplash;
     ImageIcon imgLogo;
     JLabel lblLogo, lblCopyright, lblApps1, lblApps2, lblVersion;
 
     public void init() {
-        
-        //Frame
-        
+
+        // Frame
+
         frmSplash = new JFrame();
         frmSplash.setIconImage(new ImageIcon("img/logo.png").getImage());
         frmSplash.setUndecorated(true);
         frmSplash.setSize(350, 200);
         frmSplash.setLocationRelativeTo(null);
 
-        //Panel
+        // Panel
         pnlSplash = new JPanel();
         pnlSplash.setLayout(null);
-        pnlSplash.setBackground(new Color(11,18,21));
+        pnlSplash.setBackground(new Color(11, 18, 21));
         frmSplash.setContentPane(pnlSplash);
 
-        //Logo
+        // Logo
         imgLogo = new ImageIcon(new ImageIcon("img\\logo.png").getImage().getScaledInstance(100, 80,
-        Image.SCALE_SMOOTH));
+                Image.SCALE_SMOOTH));
         lblLogo = new JLabel();
         lblLogo.setIcon(imgLogo);
         lblLogo.setSize(100, 80);
@@ -40,8 +40,8 @@ public class Splash {
         lblLogo.setBackground(new Color(2, 13, 25));
         pnlSplash.add(lblLogo);
 
-        //Subtext
-        lblCopyright = new JLabel("Version 1.01.2025");
+        // Subtext
+        lblCopyright = new JLabel("Version 1.02.2025");
         lblCopyright.setFont(new Font("Arial", Font.PLAIN, 8));
         lblCopyright.setForeground(new Color(230, 230, 230));
         lblCopyright.setSize(100, 20);
@@ -67,16 +67,15 @@ public class Splash {
         lblVersion.setForeground(new Color(230, 230, 230));
         lblVersion.setSize(300, 30);
         lblVersion.setLocation(85, 170);
-        
+
         pnlSplash.add(lblVersion);
         frmSplash.setVisible(true);
-        try{
+        try {
             Thread.sleep(5000);
-        } catch (Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(frmSplash, "Error: " + e.getMessage());
         } finally {
-        frmSplash.dispose();
+            frmSplash.dispose();
         }
     }
 }
-        
