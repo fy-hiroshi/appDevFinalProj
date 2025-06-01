@@ -142,6 +142,19 @@ public class Guest extends JFrame implements ActionListener {
 
         switch (cmd) {
             case "Back":
+                UIManager.put("Panel.background", new Color(11, 18, 21));
+                UIManager.put("OptionPane.background", new Color(11, 18, 21));
+                UIManager.put("OptionPane.foreground", new Color(230,230,230));
+                UIManager.put("OptionPane.messageForeground", new Color(230, 230, 230));
+                UIManager.put("Button.background", new Color(13, 20, 23));
+                UIManager.put("Button.foreground", new Color(230,230,230));
+                UIManager.put("Button.focusable", false);
+                UIManager.put("JTextField.background", new Color(13, 20, 23));
+                UIManager.put("JTextField.foreground", new Color(230,230,230));
+                UIManager.put("JLabel.foreground", new Color(230,230,230));
+                UIManager.put("JLabel.background", new Color(13, 20, 23));
+        
+                JOptionPane.showConfirmDialog(guestFrame, "Do you want to logout ?", "Logout", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 guestFrame.dispose();
                 LoginUI login = new LoginUI();
                 login.Login();

@@ -262,7 +262,19 @@ public void actionPerformed(ActionEvent e) {
         Guest guest = new Guest();
     } 
     else if (cmd.equals("Exit")) {
-        frame.dispose();
+        UIManager.put("Panel.background", new Color(11, 18, 21));
+        UIManager.put("OptionPane.background", new Color(11, 18, 21));
+        UIManager.put("OptionPane.foreground", new Color(230,230,230));
+        UIManager.put("OptionPane.messageForeground", new Color(230, 230, 230));
+        UIManager.put("Button.background", new Color(13, 20, 23));
+        UIManager.put("Button.foreground", new Color(230,230,230));
+        UIManager.put("Button.focusable", false);
+        UIManager.put("JTextField.background", new Color(13, 20, 23));
+        UIManager.put("JTextField.foreground", new Color(230,230,230));
+        UIManager.put("JLabel.foreground", new Color(230,230,230));
+        UIManager.put("JLabel.background", new Color(13, 20, 23));
+        
+        JOptionPane.showConfirmDialog(frame, "Do you want to exit the application ?", "Exit", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         System.exit(0);
     }
     else if (userField.getText().equals("")) {

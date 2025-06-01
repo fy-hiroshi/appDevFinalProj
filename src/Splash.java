@@ -31,7 +31,7 @@ public class Splash {
         frmSplash.setContentPane(pnlSplash);
 
         //Logo
-        imgLogo = new ImageIcon(new ImageIcon("img\\icon.png").getImage().getScaledInstance(100, 80,
+        imgLogo = new ImageIcon(new ImageIcon("img\\logo.png").getImage().getScaledInstance(100, 80,
         Image.SCALE_SMOOTH));
         lblLogo = new JLabel();
         lblLogo.setIcon(imgLogo);
@@ -41,7 +41,7 @@ public class Splash {
         pnlSplash.add(lblLogo);
 
         //Subtext
-        lblCopyright = new JLabel("Version 1.0.2025");
+        lblCopyright = new JLabel("Version 1.01.2025");
         lblCopyright.setFont(new Font("Arial", Font.PLAIN, 8));
         lblCopyright.setForeground(new Color(230, 230, 230));
         lblCopyright.setSize(100, 20);
