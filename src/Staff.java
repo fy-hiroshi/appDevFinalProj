@@ -199,10 +199,16 @@ public class Staff extends JFrame implements ActionListener {
                 UIManager.put("JLabel.foreground", new Color(230,230,230));
                 UIManager.put("JLabel.background", new Color(13, 20, 23));
         
-                JOptionPane.showConfirmDialog(staffFrame, "Do you want to logout ?", "Logout", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                staffFrame.dispose();
-                LoginUI login = new LoginUI();
-                login.Login();
+                 int choice = JOptionPane.showConfirmDialog(
+                    staffFrame, "Do you want to logout?", "Logout",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE);
+
+                if (choice == JOptionPane.YES_OPTION) {
+                    staffFrame.dispose();
+                    LoginUI login = new LoginUI();
+                    login.Login();
+                }
                 break;
 
             case "Add":

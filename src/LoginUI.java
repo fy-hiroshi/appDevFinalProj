@@ -274,8 +274,12 @@ public void actionPerformed(ActionEvent e) {
         UIManager.put("JLabel.foreground", new Color(230,230,230));
         UIManager.put("JLabel.background", new Color(13, 20, 23));
         
-        JOptionPane.showConfirmDialog(frame, "Do you want to exit the application ?", "Exit", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        System.exit(0);
+        int choice = JOptionPane.showConfirmDialog(
+            frame, "Do you want to exit the application?", "Exit",
+            JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }
     else if (userField.getText().equals("")) {
         setOptionPaneColors(); 

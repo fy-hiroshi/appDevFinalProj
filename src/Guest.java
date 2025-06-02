@@ -154,10 +154,16 @@ public class Guest extends JFrame implements ActionListener {
                 UIManager.put("JLabel.foreground", new Color(230,230,230));
                 UIManager.put("JLabel.background", new Color(13, 20, 23));
         
-                JOptionPane.showConfirmDialog(guestFrame, "Do you want to logout ?", "Logout", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                guestFrame.dispose();
-                LoginUI login = new LoginUI();
-                login.Login();
+                int choice = JOptionPane.showConfirmDialog(
+                    guestFrame, "Do you want to logout?", "Logout",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE);
+
+                if (choice == JOptionPane.YES_OPTION) {
+                    guestFrame.dispose();
+                    LoginUI login = new LoginUI();
+                    login.Login();
+                }
                 break;
 
             case "Show":
